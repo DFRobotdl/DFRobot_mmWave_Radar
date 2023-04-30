@@ -31,6 +31,10 @@ void setup()
   sensor.factoryReset();    //Restore to the factory settings 
   sensor.DetRangeCfg(0, 9);    //The detection range is as far as 9m
   sensor.OutputLatency(0, 0);
+  sensor.setSensitivity(3); //Set Sensitivity to 3
+  sensor.disableLED();		//disable onboard LED
+  //sensor.enableLED();		//enable onboard LED
+  
 }
 
 void loop()

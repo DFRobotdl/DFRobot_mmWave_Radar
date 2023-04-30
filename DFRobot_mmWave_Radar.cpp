@@ -230,12 +230,63 @@ void DFRobot_mmWave_Radar::OutputLatency(float par1, float par2)
   delay(DELAY);
 }
 
+void DFRobot_mmWave_Radar::setSensitivity(int sen)
+{
+
+  char comSetSensitivity[18] = {0};
+  
+  sprintf(comSetSensitivity, "setSensitivity %d", sen);
+
+  _s->write(comStop);
+  delay(DELAY);
+
+  _s->write(comSetSensitivity);
+  //_s->write("setSensitivity 3"); 
+  delay(DELAY);
+
+  _s->write(comSaveCfg);
+  delay(DELAY);
+
+  _s->write(comStart);
+  delay(DELAY);
+}
+
 void DFRobot_mmWave_Radar::factoryReset(void)
 {
   _s->write(comStop);
   delay(DELAY);
 
   _s->write(comFactoryReset);
+  delay(DELAY);
+
+  _s->write(comSaveCfg);
+  delay(DELAY);
+
+  _s->write(comStart);
+  delay(DELAY);
+}
+
+void DFRobot_mmWave_Radar::disableLED(void)
+{
+  _s->write(comStop);
+  delay(DELAY);
+
+  _s->write("setLedMode 1 1");
+  delay(DELAY);
+
+  _s->write(comSaveCfg);
+  delay(DELAY);
+
+  _s->write(comStart);
+  delay(DELAY);
+}
+
+void DFRobot_mmWave_Radar::enableLED(void)
+{
+  _s->write(comStop);
+  delay(DELAY);
+
+  _s->write("setLedMode 1 0");
   delay(DELAY);
 
   _s->write(comSaveCfg);
