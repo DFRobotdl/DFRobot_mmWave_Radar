@@ -16,6 +16,9 @@ DetRangeCfg	KEYWORD2
 readPresenceDetection	KEYWORD2
 OutputLatency	KEYWORD2
 factoryReset	KEYWORD2
+setSensitivity	KEYWORD2
+enableLED		KEYWORD2
+disableLED		KEYWORD2
 
 
 #######################################

@@ -92,6 +92,23 @@ class DFRobot_mmWave_Radar
       @brief  Restore the sensor current configuration to the factory settings. 
     */
     void factoryReset(void);
+	
+	
+	/**
+      @brief  Configure the sensor senitivity
+	  @param  Set the sensitivit of the sensor integer range:0-9  unit: 0=LOW 9=HIGH
+    */
+    void setSensitivity(int sen);
+	
+	/**
+      @brief  Disble Led
+    */
+    void disableLED(void);
+	
+	/**
+      @brief  Enable Led
+    */
+    void enableLED(void);
 
   private:
 
